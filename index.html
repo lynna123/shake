@@ -44,12 +44,12 @@
 
         //shake event callback
         function shakeEventDidOccur () {
+            navigator.vibrate = navigator.vibrate ||  navigator.webkitVibrate ||
+                navigator.mozVibrate || navigator.msVibrate;
             //if phone support navigator.vibrate
             if (navigator.vibrate) {
                 //vibrate 1 second
                 navigator.vibrate(1000);
-            } else if (navigator.webkitVibrate) {
-                navigator.webkitVibrate(1000);
             }
             //put your own code here etc.
             alert('Shake!');
